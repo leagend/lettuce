@@ -31,6 +31,8 @@ def wrt(what):
     if isinstance(what, unicode):
         what = what.encode('utf-8')
     sys.stdout.write(what)
+    with open("output.log", "a+") as f:
+        f.writelines(what)
 
 
 def wrap_file_and_line(string, start, end):
